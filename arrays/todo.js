@@ -115,22 +115,22 @@ console.log(todos)*/
 
     //filtering: all thats incomplete
 
-    const todos=[{
-        chore: 'clean',
-        completed: true
-    }, {
-        chore: 'cook',
-        completed: false
-    }, {
-        chore: 'walk the dog',
-        completed: true
-    }, {
-        chore:'study',
-        completed: false
-    }, {
-        chore: 'eat',
-        completed: true
-    }]
+const todos=[{
+    chore: 'clean',
+    completed: true
+}, {
+    chore: 'cook',
+    completed: false
+}, {
+    chore: 'walk the dog',
+    completed: true
+}, {
+    chore:'study',
+    completed: false
+}, {
+    chore: 'eat',
+    completed: true
+}]
 
 const getThingsToDo = function(todos){
     return todos.filter(function(todo){
@@ -147,4 +147,42 @@ const getThingsToDo = function(todos){
 }
 
 */
-console.log(getThingsToDo(todos))
+//console.log(getThingsToDo(todos))
+
+
+
+//challenge:
+    //sort by completed at the bottom
+
+const sortTodos = function(todos){
+    todos.sort(function(todo){
+        if(!todo.completed){
+            return -1
+        }else{
+            return 1
+        }
+    })
+}
+//only orders by true or false
+
+//solution:
+/*
+const sortTodos = function(todos){
+    todos.sort(function(a,b){
+        if(!a.completed && b.completed){
+            return -1
+        }else if (!b.completed && a.completed){
+            return 1
+        } else{
+            return 0
+        }
+    })
+}
+*/
+
+
+
+
+
+sortTodos(todos)
+console.log(todos)
