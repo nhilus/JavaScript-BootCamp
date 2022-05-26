@@ -115,7 +115,7 @@ console.log(todos)*/
 
 //challenge: 
 
-    //filtering: all thats completed
+    //filtering: all thats incomplete
 
     const todos=[{
         chore: 'clean',
@@ -136,8 +136,8 @@ console.log(todos)*/
 
 const getThingsToDo = function(todos){
     return todos.filter(function(todo){
-        const isCompleted= todo.completed === true
-        return isCompleted
+        const isIncomplete= todo.completed === false
+        return isIncomplete
     })
 }
 
