@@ -44,6 +44,8 @@ todos.forEach(function(item, index){
     //1. convert array to array of objects -> text, completed property
     //2. create function to remove a todo by text value
 
+/*
+
 const todos=[{
     chore: 'clean',
     state: 'completed'
@@ -75,7 +77,7 @@ deleteTodo = function (todos, state){
 deleteTodo(todos, 'WALK the DOG')
 console.log(todos)
 
-
+*/
 
 //correção:
 /*
@@ -107,3 +109,38 @@ const deleteTodoSol= function(todos, todoText){
 
 deleteTodoSol(todos, 'Clean')
 console.log(todos)*/
+
+
+
+
+//challenge: 
+
+    //filtering: all thats completed
+
+    const todos=[{
+        chore: 'clean',
+        completed: true
+    }, {
+        chore: 'cook',
+        completed: false
+    }, {
+        chore: 'walk the dog',
+        completed: true
+    }, {
+        chore:'study',
+        completed: false
+    }, {
+        chore: 'eat',
+        completed: true
+    }]
+
+const getThingsToDo = function(todos){
+    return todos.filter(function(todo){
+        const isCompleted= todo.completed === true
+        return isCompleted
+    })
+}
+
+
+
+console.log(getThingsToDo(todos))
