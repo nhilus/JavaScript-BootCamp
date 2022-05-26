@@ -1,4 +1,4 @@
-const todos = ['clean', 'cook','walk the dog', 'study', 'eat' ]
+
 
 //challenge 1:
 //create array with 5 todos
@@ -16,7 +16,7 @@ const todos = ['clean', 'cook','walk the dog', 'study', 'eat' ]
 //add a new item to the end
 //remove the first item from the list
 
-console.log(`You have ${todos.length} todos`)
+/*console.log(`You have ${todos.length} todos`)
 console.log(todos)
 
 todos.splice(2, 1)
@@ -34,4 +34,76 @@ console.log(todos)
 
 todos.forEach(function(item, index){
     console.log(`${index + 1}. ${item}`)
-})
+})*/
+
+//const todos = ['clean', 'cook','walk the dog', 'study', 'eat' ]
+
+
+
+//Challenge:
+    //1. convert array to array of objects -> text, completed property
+    //2. create function to remove a todo by text value
+
+const todos=[{
+    chore: 'clean',
+    state: 'completed'
+}, {
+    chore: 'cook',
+    state: 'incomplete'
+}, {
+    chore: 'walk the dog',
+    state: 'completed'
+}, {
+    chore:'study',
+    state: 'incomplete'
+}, {
+    chore: 'eat',
+    state: 'incomplete'
+}]
+
+
+deleteTodo = function (todos, state){
+
+    todos.forEach (function (todo, index){
+        if(todo.chore.toLowerCase() === state.toLowerCase()){
+            //console.log(index)
+            todos.splice(index, 1)
+        }
+    })
+}
+
+deleteTodo(todos, 'WALK the DOG')
+console.log(todos)
+
+
+
+//correção:
+/*
+const todos=[{
+    chore: 'clean',
+    completed: true
+}, {
+    chore: 'cook',
+    completed: false
+}, {
+    chore: 'walk the dog',
+    completed: true
+}, {
+    chore:'study',
+    completed: false
+}, {
+    chore: 'eat',
+    completed: true
+}]
+
+const deleteTodoSol= function(todos, todoText){
+    const index=todos.findIndex(function(todo){
+        return todo.text.toLowerCase()===todoText.toLowerCase()
+    })
+    if(index>-1){
+        todos.splice(index,1)
+    }
+}
+
+deleteTodoSol(todos, 'Clean')
+console.log(todos)*/
