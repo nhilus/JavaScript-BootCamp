@@ -111,8 +111,6 @@ deleteTodoSol(todos, 'Clean')
 console.log(todos)*/
 
 
-
-
 //challenge: 
 
     //filtering: all thats incomplete
@@ -136,11 +134,17 @@ console.log(todos)*/
 
 const getThingsToDo = function(todos){
     return todos.filter(function(todo){
-        const isIncomplete= todo.completed === false
-        return isIncomplete
+        return todo.completed === false
     })
 }
 
+/*solution:
 
+const getThingsToDo = function(todos){
+    return todos.filter(function(todo){
+        return !todo.completed
+    })
+}
 
+*/
 console.log(getThingsToDo(todos))
