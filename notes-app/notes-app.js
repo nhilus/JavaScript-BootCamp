@@ -35,7 +35,13 @@ document.querySelector('body').appendChild(newParagraph)
 
 */
 
-document.querySelector('button').addEventListener('click', (event) =>{
+document.querySelector('#create-note').addEventListener('click', (event) =>{
     event.target.textContent = 'the button was clicked'
+})
+//
+document.querySelector('#remove-all').addEventListener('click', (e) =>{
+    document.querySelectorAll('.note').forEach( (note) =>{
+        note.remove();
+    });
 })
 

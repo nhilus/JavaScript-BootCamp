@@ -44,7 +44,10 @@ todos.forEach(function (todo){
 
 //challenge: button, click listener
 
-document.querySelector('button').addEventListener('click', (event)=>{
+document.querySelector('#create-todo').addEventListener('click', (event)=>{
     console.log('adding a new todo')
     event.target.textContent = 'Im adding a new todo'
 })
+
+//challenge: id, classes and target unique elements
+
