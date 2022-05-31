@@ -41,3 +41,10 @@ todos.forEach(function (todo){
     p.textContent = todo.text
     document.querySelector('body').appendChild(p)
 })
+
+//challenge: button, click listener
+
+document.querySelector('button').addEventListener('click', (event)=>{
+    console.log('adding a new todo')
+    event.target.textContent = 'Im adding a new todo'
+})

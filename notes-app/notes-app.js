@@ -8,7 +8,7 @@ const notes = [{
     title:'Office modification',
     body: 'Get a new seat'
 }]
-
+/*
 //DOM - document object model
 
 //query and remove
@@ -33,4 +33,9 @@ newParagraph.textContent = 'This is a new element from JavaScript'
 document.querySelector('body').appendChild(newParagraph)
 
 
+*/
+
+document.querySelector('button').addEventListener('click', (event) =>{
+    event.target.textContent = 'the button was clicked'
+})
 
