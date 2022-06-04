@@ -17,40 +17,47 @@ const todos=[{
 
 
 
-const ps = document.querySelectorAll('p')
-ps.forEach(function(p){
-    if(p.textContent.includes('the')){
-        p.remove();
-    }
-})
-//challenge
-//you have 2 todos left (p element)
-//add a p for each todo above
 
+const filters = {
+    searchFilter: ''
+}
 
-const incompleteTodos = todos.filter(function (todo){
-    return !todo.completed
-})
+const renderTodos=function(todos, filters) {
+    const filteredTodos = todos.filter((todo)=> {
+       return todo.text.toLowerCase().includes(filters.searchFilter.toLowerCase())
+    })
 
-const summary = document.createElement('h2')
-summary.textContent = `You have ${incompleteTodos.length} todos left`
-document.body.appendChild(summary)
+    const incompleteTodos = filteredTodos.filter((todo)=>{
+        return !todo.completed
+    })
 
-todos.forEach(function (todo){
-    const p = document.createElement('p')
-    p.textContent = todo.text
-    document.querySelector('body').appendChild(p)
-})
+    document.querySelector('#todo-list').innerHTML=''
+    
+    const summary = document.createElement('h2')
+    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    document.querySelector('#todo-list').appendChild(summary)
+    
+    document.querySelector('#todo-list').innerHTML = ''
 
-//challenge: button, click listener
+    filteredTodos.forEach((todo)=>{
+        const p = document.createElement('p')
+        p.textContent = todo.text
+        document.querySelector('#todo-list').appendChild(p)
+    })
+}
 
-document.querySelector('#create-todo').addEventListener('click', (event)=>{
+renderTodos(todos, filters)
+
+document.querySelector('#create-todo').addEventListener('click', (e)=>{
     console.log('adding a new todo')
-    event.target.textContent = 'Im adding a new todo'
+    e.target.textContent = 'Im adding a new todo'
 })
-
-
 
 document.querySelector('#new-todo').addEventListener('input', (e)=>{
     console.log(e.target.value)
+})
+
+document.querySelector('#search-todo').addEventListener('input', (e)=>{
+    filters.searchText = e.target.value
+    renderTodos(todos, filters)
 })
