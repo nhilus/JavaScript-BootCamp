@@ -16,13 +16,13 @@ const todos=[{
 }]
 
 
-/*
+
 const ps = document.querySelectorAll('p')
 ps.forEach(function(p){
     if(p.textContent.includes('the')){
         p.remove();
     }
-})*/
+})
 //challenge
 //you have 2 todos left (p element)
 //add a p for each todo above
@@ -49,5 +49,8 @@ document.querySelector('#create-todo').addEventListener('click', (event)=>{
     event.target.textContent = 'Im adding a new todo'
 })
 
-//challenge: id, classes and target unique elements
 
+
+document.querySelector('#new-todo').addEventListener('input', (e)=>{
+    console.log(e.target.value)
+})
